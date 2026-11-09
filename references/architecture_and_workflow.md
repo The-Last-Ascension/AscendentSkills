@@ -63,7 +63,12 @@ The Last Ascension/
 - **Valores Estándar para todos nuestros Plugins en IntelliJ IDEA:**
   - **Location:** `C:\Users\Sebilebi\source\repos\The Last Ascension\plugins`
   - **Groups / Templates:** `Plugin` -> `Paper`
-  - **Build System:** `Gradle` (más rápido, limpio y flexible para sombrear librerías como SQLite/HikariCP y compilar directo a `server/plugins/`)
+  - **Build System:** `Gradle`
+    - **Use Gradle version catalog:** Desmarcado (`[ ]`)
+    - **Gradle Plugins:**
+      - `Use run-paper Gradle plugin`: Desmarcado (`[ ]`, ya usamos nuestro `server/` propio con Purpur)
+      - `Use shadow Gradle plugin`: **Marcado (`[x]`)** en `AscendentCore` (para empaquetar HikariCP/SQLite en el `.jar`) y desmarcado en módulos ligeros que solo dependan de `AscendentCore`.
+      - Resto (`paperweight-userdev`, `resource-factory`, `gremlin`): Desmarcados (`[ ]`).
   - **Language:** `Java`
   - **Minecraft Version:** `1.21.1`
   - **Group ID:** `com.thelastascension`

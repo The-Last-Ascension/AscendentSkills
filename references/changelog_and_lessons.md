@@ -80,8 +80,24 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
 - **Mecánica de Revivir:** Al morir/caer en combate, un jugador puede **revivir a otro jugador**.
 - **Inicialización de Carpetas y `server/`:** El usuario autoriza empezar con el servidor (*"ya puedes empezar con el servidor"*). Se crean las carpetas oficiales (`server/`, `plugins/`, `mods/`, `resource packs/`, `datapacks/`, `assets/`), se trasladan los recursos crudos a `assets/` y se deja listo `server/` con Purpur `1.21.1`, `MythicMobs`, `ModelEngine` y `start.bat`.
 
+### [2026-11-09] — Implementación de `AscendentCore v1.0.0` y Repositorios Oficiales en GitHub
+- **Repositorios Creados y Publicados en `https://github.com/The-Last-Ascension`:**
+  - `AscendentSkills` (`v1.0.0`)
+  - `AscendentResourcePack` (`v1.0.0`)
+  - `AscendentDatapack` (`v1.0.0`)
+  - `AscendentCore` (`v1.0.0`)
+- **Arquitectura de `AscendentCore v1.0.0` (`com.thelastascension.ascendentCore`):**
+  - `LangManager`: Motor transversal de idiomas (`es_es.yml` obligatorio/primario y `en_us.yml` secundario) con auditoría automática de claves que falten en español y registro abierto para todos los plugins modulares.
+  - `DatabaseManager`: Pool `HikariCP` con **SQLite en modo WAL** (`data/ascendent.db`) por defecto y soporte para **MariaDB/MySQL**, con hilos virtuales (`VirtualThreads` de Java 21) y `executeSchema()` para tablas de plugins hijos.
+  - `ProfileManager` + `PlayerProfile`: Caché en RAM de perfiles de jugadores (Nivel Global, XP, Puntos de Estadística Globales estilo *Trove*, Monedas, Huecos de Talismán estilo *Elden Ring*, Clase Activa, Idioma, Barra de Stun estilo *Grounded 2* y estado Abatido/Revivir).
+  - `ElementType` & `StatType`: Los 8 elementos y las 10 estadísticas base unificadas.
+  - `ModuleRegistry` & `AscendentModule`: API de registro para plugins modulares hijos (`AscendentCombat`, `AscendentClasses`, `AscendentHousing`, `AscendentClans`, etc.).
+  - `ClientBridge`: Canal de paquetes `ascendent:main` listo para comunicarse con `AscendentClient` (Fabric `1.21.1`).
+  - `AscendentCommand`: Comando `/ascendent` (`/asc`) con subcomandos `info`, `stats`, `modulos`, `idioma` y `reload`.
+  - Tarea Gradle `deployToServer`: Cada `./gradlew build` copia automáticamente `AscendentCore-1.0.0.jar` a `server/plugins/`.
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
 
-*(Se irá completando automáticamente conforme se desarrollen plugins, modelos, menús y sistemas)*
+- **Lección 1 (Gradle 9.9+ Configuration Cache en `deployToServer`):** En `build.gradle.kts` con `org.gradle.configuration-cache=true`, nunca referenciar `project.version` dentro del bloque `rename { ... }` de una tarea `Copy` en tiempo de ejecución. Capturar siempre `val pluginVersion = project.version.toString()` fuera del bloque de la tarea.
