@@ -101,3 +101,4 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
 ## Lecciones Técnicas y Resolución de Bugs
 
 - **Lección 1 (Gradle 9.9+ Configuration Cache en `deployToServer`):** En `build.gradle.kts` con `org.gradle.configuration-cache=true`, nunca referenciar `project.version` dentro del bloque `rename { ... }` de una tarea `Copy` en tiempo de ejecución. Capturar siempre `val pluginVersion = project.version.toString()` fuera del bloque de la tarea.
+- **Lección 2 (Comillas obligatorias en `description` dentro de `plugin.yml`):** La plantilla por defecto de IntelliJ escribe `description: $description` sin comillas. Si la descripción en `gradle.properties` contiene dos puntos (`:`), SnakeYAML falla al arrancar Purpur con `ScannerException: mapping values are not allowed here`. Siempre envolver entre comillas dobles `description: "${description}"` en `plugin.yml` (aplicado en `AscendentCore v1.0.1`).
