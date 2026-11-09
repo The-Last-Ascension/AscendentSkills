@@ -1,68 +1,64 @@
-# Catálogo de Assets y Archivos Base (`archivos temp/`)
+# Catálogo de Assets y Archivos Base (`assets/`)
 
-Este documento registra los binarios de servidor, plugins base y paquetes de **SamusDev** disponibles en el proyecto, así como su estado de integración y localización al Español.
+Este documento registra todos los motores de servidor, plugins premium desbloqueados y paquetes de **SamusDev** disponibles en `assets/`, sincronizados con el documento visual de Word/Google Drive **`assets/Catalogo_Assets_The_Last_Ascension.docx`**.
 
----
-
-## 1. Motor y Plugins Base (`archivos temp/`)
-
-| Archivo | Versión | Rol en *The Last Ascension* |
-| :--- | :--- | :--- |
-| `purpur-1.21.1-2329.jar` | Purpur `1.21.1` (Build 2329) | Motor principal del servidor (Paper API). |
-| `ModelEngine-4.1.1.jar` | `4.1.1` (Plan Gratuito inicial) | Renderizado y animación de modelos 3D (`.bbmodel`) de NPCs, nodos, trampas, monturas, pets y bosses. |
-| `MythicMobs-5.14.0.jar` | `5.14.0` (Plan Gratuito inicial) | Gestión de entidades custom, IA base y ejecución de skills de SamusDev conectadas a `AscendantCore`. |
+> **Regla de Mantenimiento (`AGENTS.md` Regla 5):**
+> - **Deduplicación:** En `assets/` solo debe existir **una única copia** de cada asset (siempre la versión más reciente).
+> - **Contraseña de Archivos:** Si un `.zip` o `.rar` descargado pide contraseña, es **`BLACKSPIGOT.COM`** (y debe re-empaquetarse/extraerse sin contraseña en `assets/`).
+> - **Sincronización con Word/Drive:** Cada vez que se añada, actualice o elimine un asset en `assets/`, se debe regenerar/actualizar **`assets/Catalogo_Assets_The_Last_Ascension.docx`** (usando `scratch/build_openxml_docx.ps1`) con: Nombre, 1 foto representativa, mini-descripción en Español, link de descarga (BlackSpigot) y link oficial (`samusdev.com` / creador).
 
 ---
 
-## 2. Paquetes de Assets de SamusDev (`samus2002_*`)
+## 1. Motores del Servidor y Plugins Premium (`assets/`)
 
-### A. `samus2002_RPG_ESSENTIALS_CORE [v1.1].zip`
-- **NPCs 3D (`ModelEngine/blueprints/npc_*.bbmodel` + Avatares PNG):**
-  - `npc_banker` (Banquero / Banco Personal y de Clan)
-  - `npc_merchant_armor` y `npc_merchant_weapon` (Herreros sincronizados globalmente entre ciudades)
-  - `npc_merchant_forbidden` (**Mercader del Mercado Negro** rotativo/móvil)
-  - `npc_merchant_jewelry` (Mercader de Joyas / **Talismanes estilo Elden Ring**)
-  - `npc_merchant_pet` (Mercader de **Mascotas / Pets**)
-  - `npc_merchant_potion`, `npc_merchant_basic`, `npc_merchant_wandering`
-  - `npc_quest_master` (Maestro de Misiones principales/secundarias/clase)
-  - `npc_healing_fairy`, `npc_mayor`, `npc_guard`, `npc_villager_f/m` (y variantes sentadas)
-- **Objetos Interactivos 3D (`obj_*.bbmodel`):**
-  - `obj_portal_dungeon`, `obj_portal_basic`, `obj_portal_sanctuary`, `obj_portal_unstable` (Portales de acceso a Mazmorras y Pisos)
-  - `obj_waypoint_gate` (Puerta de **Viaje Rápido** con cámara estilo *GTA V*)
-  - `obj_storage_chest` (Cofre de almacenamiento/banco)
-- **Economía Visual:** Modelos y texturas de monedas (`coin`, `coin_bundle`, `coin_stacked`).
-
-### B. `samus2002_RPG_ESSENTIALS_VOL1_v1.1.zip`
-- **Nodos de Minerales Renovables (Entidades 3D `ore_*.bbmodel` + Lingotes `bar_*`):**
-  - Cobre (`copper`), Hierro (`iron`), Oro (`gold`), Esmeralda (`emerald`), Diamante (`diamond`), Rubí (`ruby`), Zafiro (`sapphire`), Topacio (`topaz`) y **Dragonita** (`dragonite`), además de `rock`, `boulder`, `pebbles_1/2`, `log` y `twig`.
-- **Cofres y Llaves Temáticas/Elementales (`chest_*` + `key_*`):**
-  - `wooden`, `golden`, `bone`, `aqua`, `fire/magma`, `ice`, `wind`, `forest`, `light`, `shadow`.
-- **Runas y Piedras Rúnicas (Ideales para Mejora de Habilidades y Buffs):**
-  - Runas (`rune_aqua`, `fire`, `ice`, `light`, `nature`, `shadow`, `undead`, `wind`).
-  - Piedras rúnicas 3D (`runestone_heal`, `resistance`, `speed`, `strength`).
-- **Objetos Rompibles / Interactivos de Mazmorra:**
-  - `barrel_explosive`, `barrel_poison`, `vase_common`, `vase_small`, `vase_tall`.
-
-### C. `samus2002_RPG_ESSENTIALS_VOL2.zip`
-- **Flora y Recursos Alquímicos Renovables (Entidades 3D `.bbmodel` + Ítems):**
-  - `deathbloom`, `magical_herb`, `mushroom_glowing`, `mushroom_red`, `four_leaf_clover`, `shamrock`, `wild_berry`, `cactus`.
-- **Trampas 3D de Mazmorra (`ModelEngine/blueprints/*_trap*.bbmodel`):**
-  - `flame_trap`, `sawblade_trap_long`, `sawblade_trap_short`, `spike_ball_trap`, `spike_trap_pop_up`, `spike_trap_still`.
-- **Viaje y Consumibles:**
-  - `waystone.bbmodel`, `portal.bbmodel`, `portal_round.bbmodel`.
-  - Pociones (`potion_minor`, `small`, `large`, `superior`, `eternal`) y pergaminos (`scroll_return`, `scroll_teleport`).
-
-### D. `samus2002_TRAINING_DUMMY_PACK_v1.1-dqx5zn.zip`
-- **Muñeco de Entrenamiento (`dummy.bbmodel`):**
-  - Entidad inmóvil con animación de impacto (`state{s=hit}`), ideal para testear el **Parry**, la **Barra de Stun**, los **Ataques Cargados** y las **Reacciones Elementales**.
+| Archivo en `assets/` | Versión | Link Oficial | Rol en *The Last Ascension* |
+| :--- | :--- | :--- | :--- |
+| `purpur-1.21.1-2329.jar` | Purpur `1.21.1` (Build 2329) | [purpurmc.org](https://purpurmc.org/) | Motor principal del servidor (Paper API + Pufferfish SIMD). |
+| `UltimateModelEngine-R4.1.1-UME.2.zip` | `R4.1.1-UME.2` (Desbloqueado) | [MythicCraft](https://mythiccraft.io/index.php?resources/model-engine-ultimate-custom-entity-model-manager-1-19-4-1-21-4.1213/) | Sustituye a `ModelEngine-4.1.1.jar` (Free eliminado). Elimina el límite de 12 modelos simultáneos, cargando los **73+ `.bbmodel`** completos en `server/plugins/ModelEngine/blueprints/`. |
+| `MythicMobs-5.13.1-community.1.zip` | `5.13.1-community.1` (Premium) | [MythicCraft](https://mythiccraft.io/index.php?resources/mythicmobs.1/) | Sustituye a `MythicMobs-5.14.0.jar` (Free eliminado). Activa `isVolatile() = true` (matemáticas, `<random.float>`, variables de caster y proyectiles complejos de SamusDev). |
+| `ItemsAdder.jar` | `4.0.18-community.1` | [itemsadder.devs.beer](https://itemsadder.devs.beer/) | Gestor opcional de Resource Pack, HUDs, Font Images e Ítems Custom. |
+| `Oraxen-1.219.0-community.1.zip` | `1.219.0-community.1` | [docs.oraxen.com](https://docs.oraxen.com/) | Gestor alternativo de Resource Pack, Glifos Unicode, Armaduras y Mobiliario 3D con código fuente incluido. |
 
 ---
 
-## 3. Estado de Integración y Traducción al Español (Regla 3)
+## 2. Packs Esenciales y Sistemas Base de SamusDev (`assets/`)
 
-- **Integración Técnica (Completada en Punto 4):**
-  - **ModelEngine (`server/plugins/ModelEngine/`):** Extraídos los **73 modelos `.bbmodel`** completos en `blueprints_library/` y activados los **12 modelos principales de showcase** en `blueprints/` (límite de la versión gratuita de `ModelEngine 4.1.1`: `dummy`, `npc_quest_master`, `npc_merchant_weapon`, `npc_merchant_armor`, `npc_merchant_potion`, `npc_banker`, `npc_healing_fairy`, `obj_portal_dungeon`, `obj_waypoint_gate`, `runestone_heal`, `ore_dragonite`, `chest_golden`).
-  - **MythicMobs (`server/plugins/MythicMobs/packs/AscendentSamus/`):** Integrados los **16 archivos YAML** (`89` Mobs/NPCs/Nodos, `53` Ítems y `456` Skills), adaptados para funcionar sin errores de placeholders de pago en `MythicMobs Free 5.14.0`.
-  - **Resource Pack Unificado (`resource packs/AscendentResourcePack` `v1.1.0`):** Fusionados los modelos/texturas de `RPG_ESSENTIALS_CORE`, `VOL1`, `VOL2` (`paper.json`, `feather.json` con 45 `custom_model_data` `2000..2044` y `atlases/blocks.json`) junto con el resource pack compilado de `ModelEngine`, y sincronizado automáticamente en el perfil de CurseForge (`The Last Ascension/resourcepacks/AscendentResourcePack`).
-- **Estado de Idioma Actual:** **100% EN INGLÉS** en los 16 archivos YAML de `AscendentSamus` (`[Merchant]`, `[Banker]`, `Copper Bar`, `Dragonite Bar`, `Deathbloom`, `Magical Herb`, `Training Dummy`, menús y diálogos).
-- **Acción Requerida (Regla 3):** Avisado al usuario tras completar el Punto 4 para confirmar si desea traducir ahora mismo todos los NPCs, ítems, menús y textos de SamusDev al **Español**.
+| # | Nombre y Versión | Archivo en `assets/` | Link Descarga | Link Oficial (`samusdev.com`) |
+| :-: | :--- | :--- | :--- | :--- |
+| 1 | **RPG Essentials Core (v1.1)** | `samus2002_RPG_ESSENTIALS_CORE [v1.1].zip` | [NullForums](https://nullforums.net/resources/rpg-essentials-core.11077/) | [samusdev.com/product/rpg-essentials-core/](https://samusdev.com/product/rpg-essentials-core/) |
+| 2 | **RPG Essentials Vol 1 (v1.1)** | `samus2002_RPG_ESSENTIALS_VOL1_v1.1.zip` | [NullForums](https://nullforums.net/resources/samusdev-rpg-essentials-vol-1-v1-1.5019/) | [samusdev.com/product/rpg-essentials-vol-1/](https://samusdev.com/product/rpg-essentials-vol-1/) |
+| 3 | **RPG Essentials Vol 2 (v1.0)** | `samus2002_RPG_ESSENTIALS_VOL2.zip` | [BlackSpigot .21888](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-essentials-vol-2.21888/) | [samusdev.com/product/rpg-essentials-vol-2/](https://samusdev.com/product/rpg-essentials-vol-2/) |
+| 4 | **RPG Essentials Vol 3 (v1.0)** | `samus2002_RPG_ESSENTIALS_VOL3.zip` | [BlackSpigot .21970](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-essentials-vol-3.21970/) | [samusdev.com/product/rpg-essentials-vol-3/](https://samusdev.com/product/rpg-essentials-vol-3/) |
+| 5 | **RPG Class Essentials Vol 1 (v1.0)** | `samus2002_RPG_CLASS_ESSENTIALS_VOL1_PACK.zip` | [BlackSpigot .1823](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-essentials-vol-1.1823/) | [samusdev.com/product/rpg-class-essentials-vol-1/](https://samusdev.com/product/rpg-class-essentials-vol-1/) |
+| 6 | **Training Dummy Pack (v1.1)** | `samus2002_TRAINING_DUMMY_PACK_v1.1.zip` | [NullForums](https://nullforums.net/resources/training-dummy-v1-1.7797/) | [samusdev.com/product/training-dummy/](https://samusdev.com/product/training-dummy/) |
+
+---
+
+## 3. Paquetes de Clases RPG y Jefes de SamusDev (`assets/`)
+
+| # | Nombre y Versión | Archivo en `assets/` | Link Descarga (BlackSpigot) | Link Oficial (`samusdev.com`) |
+| :-: | :--- | :--- | :--- | :--- |
+| 7 | **RPG Class Series \| Archer (v1.8)** *(Eliminado duplicado antiguo v1.0)* | `[Samus2002] RPG Class Series Archer.zip` | [BlackSpigot .1649](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-series-archer-v1-8.1649/) | [samusdev.com/product/rpg-class-series-archer/](https://samusdev.com/product/rpg-class-series-archer/) |
+| 8 | **RPG Class Series \| Archmage (v1.3)** | `[Samus2002] RPG Class Series Archmage.zip` | [BlackSpigot .1626](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-series-archmage-v1-3.1626/) | [samusdev.com/product/rpg-class-series-archmage/](https://samusdev.com/product/rpg-class-series-archmage/) |
+| 9 | **RPG Class Series \| Bard (v1.2)** | `samus2002_BARD_PACK_v1.2.rar` | [BlackSpigot .1212](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-series-bard-v1-2.1212/) | [samusdev.com/product/rpg-class-series-bard/](https://samusdev.com/product/rpg-class-series-bard/) |
+| 10 | **RPG Class Series \| Monk (v1.1)** | `samus2002_MONK_PACK_v1.1.zip` | [BlackSpigot .1724](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-series-monk-v1-1.1724/) | [samusdev.com/product/rpg-class-series-monk/](https://samusdev.com/product/rpg-class-series-monk/) |
+| 11 | **RPG Class Series \| Shaman (v1.0)** | `samus2002_SHAMAN_PACK.zip` | [BlackSpigot .1189](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-series-shaman.1189/) | [samusdev.com/product/rpg-class-series-shaman/](https://samusdev.com/product/rpg-class-series-shaman/) |
+| 12 | **RPG Class Awakened \| Archer (v1.0)** | `samus2002_AWAKENED_ARCHER.zip` | [BlackSpigot .2285](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-archer.2285/) | [samusdev.com/product/rpg-class-awakened-archer/](https://samusdev.com/product/rpg-class-awakened-archer/) |
+| 13 | **RPG Class Awakened \| Cleric (v1.0)** | `samus2002_AWAKENED_CLERIC.zip` | [BlackSpigot .22122](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-cleric.22122/) | [samusdev.com/product/rpg-class-awakened-cleric/](https://samusdev.com/product/rpg-class-awakened-cleric/) |
+| 14 | **RPG Class Awakened \| Dragon Warrior (v1.0)** | `samus2002_AWAKENED_DRAGON_WARRIOR.zip` | [BlackSpigot .217](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-dragon-warrior.217/) | [samusdev.com/product/rpg-class-awakened-dragon-warrior/](https://samusdev.com/product/rpg-class-awakened-dragon-warrior/) |
+| 15 | **RPG Class Awakened \| Mage (v1.0)** *(Extraído de `archive.zip`)* | `samus2002_AWAKENED_MAGE.zip` | [BlackSpigot .2324](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-mage.2324/) | [samusdev.com/product/rpg-class-awakened-mage/](https://samusdev.com/product/rpg-class-awakened-mage/) |
+| 16 | **RPG Class Awakened \| Shaman (v1.1)** | `samus2002_AWAKENED_SHAMANv_1.1.zip` | [BlackSpigot .304](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-shaman.304/) | [samusdev.com/product/rpg-class-awakened-shaman/](https://samusdev.com/product/rpg-class-awakened-shaman/) |
+| 17 | **RPG Class Awakened \| Spiritcaller (v1.0)** | `samus2002_AWAKENED_SPIRITCALLER.zip` | [BlackSpigot .22123](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-awakened-spiritcaller.22123/) | [samusdev.com/product/rpg-class-awakened-spiritcaller/](https://samusdev.com/product/rpg-class-awakened-spiritcaller/) |
+| 18 | **RPG Class Legends \| Death Knight (v1.1)** | `samus2002_DEATH_KNIGHT_PACK_v1.1.zip` | [BlackSpigot .2070](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-legends-death-knight-v1-1.2070/) | [samusdev.com/product/rpg-class-legends-death-knight/](https://samusdev.com/product/rpg-class-legends-death-knight/) |
+| 19 | **RPG Class Heroes \| Water Samurai (v1.0)** | `samus2002_HEROES_WATER_SAMURAI.zip` | [BlackSpigot .2282](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-heroes-water-samurai.2282/) | [samusdev.com/product/rpg-class-heroes-water-samurai/](https://samusdev.com/product/rpg-class-heroes-water-samurai/) |
+| 20 | **RPG Class Boss \| Archer (Boss Only) (v1.0)** | `samus2002_RPG_CLASS_BOSS_ARCHER_BOSS_ONLY.zip` | [BlackSpigot .2340](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-boss-archer.2340/) | [samusdev.com/product/rpg-class-boss-archer/](https://samusdev.com/product/rpg-class-boss-archer/) |
+| — | *[Pendiente de copiar `.zip` a `assets/`]* **RPG Class \| Arcane Swordweaver (COSMO)** | *(No presente aún en `assets/`)* | [BlackSpigot .688](https://www.blackspigot.com/leaked-minecraft-plugins/rpg-class-arcane-swordweaver.688/) | [MCModels](https://mcmodels.net/products/11919/cosmo-arcane-swordweaver-rpg-class) |
+
+---
+
+## 4. Duplicados Eliminados durante la Auditoría de `assets/`
+1. **`samus2002_ARCHER_PACK.zip` (`v1.0`):** Eliminado en favor de `[Samus2002] RPG Class Series Archer.zip` (**`v1.8`**, más reciente con 312 archivos frente a 303).
+2. **`samus2002_RPG_ESSENTIALS_CORE.zip.zip`:** Eliminado por ser un duplicado encriptado de `samus2002_RPG_ESSENTIALS_CORE [v1.1].zip`.
+3. **Duplicado de `samus2002_RPG_ESSENTIALS_VOL2.zip`:** Se conservó la copia con `Important Stuff.txt` y fechas originales intactas y se eliminó el duplicado.
+4. **`ModelEngine-4.1.1.jar` (Free Trial):** Eliminado en favor de `UltimateModelEngine-R4.1.1-UME.2.zip` (versión completa sin límite de 12 modelos).
+5. **`MythicMobs-5.14.0.jar` (Free Trial):** Eliminado en favor de `MythicMobs-5.13.1-community.1.zip` (versión Premium desbloqueada con soporte completo de variables y matemáticas).

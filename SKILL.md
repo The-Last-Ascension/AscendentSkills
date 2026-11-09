@@ -57,8 +57,8 @@ Para mantener el contexto limpio y detallado, consulta y actualiza estos documen
    - Materiales inventados en **nodos-entidad renovables**, sistema de Amigos, Party y **Clanes estilo Trove** (banco, permisos, estandarte, mejoras y XP grupal).
 4. **[Arquitectura de Carpetas, Versionado (`X.Y.Z`) y Regla de IntelliJ IDEA](./references/architecture_and_workflow.md)**
    - Estructura raíz (`server/`, `plugins/`, `mods/`, `resource packs/`, `datapacks/`, `assets/`), versionado de 3 cifras (`X.Y.Z`) y **regla obligatoria de que el usuario crea primero los proyectos base de plugins/mods en IntelliJ IDEA**.
-5. **[Catálogo de Assets Base y Estado de Traducción](./references/assets_inventory.md)**
-   - Inventario detallado de `archivos temp/` (`Purpur 1.21.1`, `MythicMobs 5.14.0`, `ModelEngine 4.1.1` y los 4 packs de **SamusDev**: *RPG Essentials Core, Vol 1, Vol 2* y *Training Dummy*) + recordatorio de traducción pendiente al Español.
+5. **[Catálogo de Assets Base, Documento Word/Drive (`Catalogo_Assets_The_Last_Ascension.docx`) y Estado de Traducción](./references/assets_inventory.md)**
+   - Inventario detallado de los **25 archivos únicos** en `assets/` (`Purpur 1.21.1`, `UltimateModelEngine R4.1.1-UME.2`, `MythicMobs 5.13.1-community.1`, `ItemsAdder`, `Oraxen` y los **20 packs de SamusDev** de esenciales, clases y jefes), regla de deduplicación, contraseña `BLACKSPIGOT.COM` y sincronización automática obligatoria con **`assets/Catalogo_Assets_The_Last_Ascension.docx`**.
 6. **[Infografía Visual de 8 Elementos y Doble Sistema de Reacciones](./resources/tabla_elemental_ascendant.png)**
    - Esquema visual con iconos 100% originales pintados por nosotros para los **8 elementos** (*Ígneo, Crio, Fulmen, Céfiro, Terra, Sylva, Umbra, Astral*), eficacias, **Reacciones de Impregnación** (1J/Coop) y **Sinergias de Ataques entre Amigos** (Coop).
 7. **[Registro Evolutivo, Hitos y Bugs](./references/changelog_and_lessons.md)**
@@ -68,7 +68,7 @@ Para mantener el contexto limpio y detallado, consulta y actualiza estos documen
 
 ## 4. Arquitectura Técnica Confirmada
 
-- **Servidor Base (Confirmado):** **Purpur 1.21.1** (`purpur-1.21.1-2329.jar`) junto a **MythicMobs `5.14.0`** (Free) y **ModelEngine `4.1.1`** (Free) y nuestro plugin central propio **`AscendantCore`**.
+- **Servidor Base (Confirmado):** **Purpur 1.21.1** (`purpur-1.21.1-2329.jar`) junto a **MythicMobs `5.13.1-community.1`** (Premium desbloqueado con soporte matemático/variables) y **UltimateModelEngine `R4.1.1-UME.2`** (Premium desbloqueado sin límite de 12 modelos) y nuestros plugins modulares propios (`AscendentCore`, `AscendentCombat`, `AscendentClasses`, `AscendentAdmin`).
 - **Cliente (Confirmado):** **Fabric 1.21.1** con nuestro **Mod Cliente Superligero (`AscendantClient`)** comunicado por paquetes con Purpur + **Resource Pack del Servidor**.
 
 ---

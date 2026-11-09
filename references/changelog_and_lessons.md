@@ -154,6 +154,16 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
   - **Pestaña 4 (Control del Servidor y Mundo):** Hora, Clima, Gamemode propio, Modo Invisible (*Staff Vanish*), Velocidad de Vuelo (*x1 a x8*), Spawn del mundo, Whitelist/Mantenimiento y Recarga en caliente (*Hot Reload*) de todos los módulos `Ascendent*`, `MythicMobs` y `ModelEngine`.
 - **Regla Permanente de Auto-Mejora de `AscendentAdmin`:** A partir de ahora, toda nueva función, sistema o plugin que se añada al servidor deberá integrarse automáticamente también dentro de `AscendentAdmin`.
 
+### [2026-11-09] — Auditoría, Deduplicación y Catálogo Visual Word/Drive (`assets/Catalogo_Assets_The_Last_Ascension.docx`)
+- **Limpieza y Deduplicación de `assets/` (de 30 a 25 archivos únicos):**
+  - Desencriptados los 4 envoltorios con contraseña `BLACKSPIGOT.COM` (`archive.zip` -> `samus2002_AWAKENED_MAGE.zip`, `samus2002_AWAKENED_ARCHER.zip`, `samus2002_HEROES_WATER_SAMURAI.zip`, `samus2002_RPG_CLASS_BOSS_ARCHER_BOSS_ONLY.zip`) para que todos los `.zip` de `assets/` sean directamente accesibles sin contraseña.
+  - Eliminados 5 duplicados/versiones antiguas: `samus2002_ARCHER_PACK.zip` (v1.0 antiguo frente a Archer v1.8), `samus2002_RPG_ESSENTIALS_CORE.zip.zip` (duplicado encriptado), duplicado de `RPG_ESSENTIALS_VOL2.zip`, `ModelEngine-4.1.1.jar` (Free Trial) y `MythicMobs-5.14.0.jar` (Free Trial).
+- **Actualización de Motores del Servidor a Versiones Desbloqueadas:**
+  - Desplegados en `server/plugins/` **`UltimateModelEngine-R4.1.1-UME.2.jar`** (elimina el límite de 12 modelos, cargando los **73 `.bbmodel`** completos en `server/plugins/ModelEngine/blueprints/`) y **`MythicMobs-5.13.1-community.1.jar`** (`isVolatile() = true` desbloqueado para placeholders matemáticos y variables).
+- **Creación del Catálogo Visual Word/Drive (`assets/Catalogo_Assets_The_Last_Ascension.docx`):**
+  - Documento OpenXML `.docx` con los 25 assets de `assets/` (+ nota sobre `Arcane Swordweaver` pendiente de copiar a `assets/`), incluyendo para cada uno: **Nombre y versión**, **1 foto/captura oficial incrustada**, **mini-descripción en Español**, **link de descarga (BlackSpigot / fuente)** y **link oficial (`samusdev.com` / creador)**.
+  - Regla permanente añadida a `AGENTS.md`: actualizar siempre `assets/Catalogo_Assets_The_Last_Ascension.docx` cada vez que se añada, actualice o elimine un asset en `assets/`.
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
