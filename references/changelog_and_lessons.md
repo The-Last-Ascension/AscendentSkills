@@ -96,6 +96,27 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
   - `AscendentCommand`: Comando `/ascendent` (`/asc`) con subcomandos `info`, `stats`, `modulos`, `idioma` y `reload`.
   - Tarea Gradle `deployToServer`: Cada `./gradlew build` copia automáticamente `AscendentCore-1.0.0.jar` a `server/plugins/`.
 
+### [2026-11-09] — Implementación de `AscendentCombat v1.0.0`, Repositorio en GitHub y Perfil Cliente en CurseForge
+- **Perfil Cliente en CurseForge (`The Last Ascension`):**
+  - Versión de Minecraft: **`1.21.1`**
+  - Cargador de mods: **`Fabric`** (`fabric-0.20.1`) + **Fabric API** recomendada.
+- **Implementación de `AscendentCombat v1.0.0` (`com.thelastascension.ascendentCombat`):**
+  - Registrado automáticamente como módulo hijo en `AscendentCore` (`ModuleRegistry`) y en `LangManager` (`es_es.yml` primario + `en_us.yml` secundario).
+  - **`WeaponCombatTags`:** Propiedades configurables por arma mediante `PersistentDataContainer` (`can_block`, `can_parry`, `element`, `block_mitigation`) y flag `unparryable_attack` en entidades enemigas.
+  - **`ParryAndStunManager` (Estilo *Grounded 2*):**
+    - Clic derecho abre ventana de Parry perfecto (`260ms`) y guardia activa (`1100ms`).
+    - Si el ataque enemigo es **parreable** y entra en ventana de Parry: `0` daño recibido, sonido y chispas de parry, empuje y subida fuerte de **Stun al enemigo**.
+    - Si el ataque enemigo **NO es parreable** (o es bloqueo normal): aviso de *Ataque Imparable*, mitigación parcial de daño y subida del **Stun propio del jugador** (si llega al máximo, rompe guardia y aturde al jugador).
+    - Cuando la barra de Stun de un enemigo llega al 100%, entra en estado **Aturdido** (*Stunned*: halo de partículas sobre la cabeza, IA pausada y sin poder atacar durante `4s`).
+  - **`ElementalReactionManager` (8 Elementos + Doble Reacción):**
+    - **Tipo 1 (Impregnación en enemigo, 1J/Coop):** Los enemigos empiezan sin elemento impregnado; el primer elemento aplica su estado alterado (`8s`) y un segundo elemento distinto detona la Reacción de Impregnación (*Tormenta Ígnea*, *Combustión Abisal*, *Superconductividad*, *Eclipse Cósmico*, etc.) con daño y Stun extra.
+    - **Tipo 2 (Definitiva Conjunta entre Amigos, Coop):** Abre una ventana de sinergia elemental (`4s`, `12` bloques) para que un segundo compañero combine otro elemento y desate una **Definitiva Conjunta** en área.
+  - **`DownedReviveManager` (Abatido y Revivir):**
+    - Al recibir daño letal, el jugador cae **Abatido** (`30s` de cuenta atrás en postura arrastrándose) en vez de morir al instante.
+    - Un aliado cercano (`<= 3.5` bloques) manteniendo `Shift` canaliza el revivir durante `3.0s` con barra de progreso en tiempo real, levantándolo con el `40%` de su vida máxima.
+  - **`CombatCommand` (`/combat` / `/asccombat`):** Subcomandos `info`, `weapon`, `dummy [parryable|unparryable]`, `coop <elemento> [solo]`, `downed` y `revive`.
+  - Publicado en `https://github.com/The-Last-Ascension/AscendentCombat` (`v1.0.0`).
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
