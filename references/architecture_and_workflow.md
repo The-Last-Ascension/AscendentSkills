@@ -6,7 +6,7 @@
 
 Todo lo que se cree desde cero en este proyecto (plugins, mods, resource packs, datapacks, assets propios y repositorios) llevará obligatoriamente el prefijo **`Ascendent`** seguido de la mecánica o sistema:
 - **Plugin Central:** `AscendentCore`
-- **Plugins Modulares (Ejemplos):** `AscendentCombat`, `AscendentClasses`, `AscendentHousing`, `AscendentClans`, `AscendentMenus`, `AscendentCompanions` (Pets/Monturas), `AscendentDungeons`
+- **Plugins Modulares (Ejemplos):** `AscendentCombat`, `AscendentClasses`, `AscendentAdmin` (Panel de Staff/Administración), `AscendentHousing`, `AscendentClans`, `AscendentMenus`, `AscendentCompanions` (Pets/Monturas), `AscendentDungeons`
 - **Mod Cliente Fabric:** `AscendentClient`
 - **Resource Pack y Datapack:** `AscendentResourcePack`, `AscendentDatapack`
 
@@ -52,6 +52,9 @@ The Last Ascension/
   - Contiene todo el código genérico, repetible y transversal que necesitan todos los demás plugins.
   - Incluye utilidades compartidas como el **sistema de traducción/localización** (Español obligatorio + Inglés opcional), registro de jugadores, atributos base y comunicación con `AscendentClient`.
   - **Base de Datos de Alto Rendimiento (Portable Windows -> Linux):** Utiliza **SQLite en modo WAL (`Write-Ahead Logging`) con HikariCP asíncrono + Caché en RAM** por defecto (cero latencia en el hilo principal y 100% autocontenido en archivo para moverlo de Windows a Linux sin instalar nada externo), con soporte configurable para **MariaDB/MySQL** si en el futuro se escalan múltiples instancias.
+- **El Plugin `AscendentAdmin` (Panel de Staff y Administración Total — Evolución Continua Obligatoria):**
+  - Proporciona el menú interactivo `/staff` (`/admin`, `/panel`, `/ascadmin`) exclusivo para `OP` o usuarios con permiso `ascendent.admin` / `ascendent.staff`.
+  - **Regla de Auto-Ampliación:** Cada vez que se implemente cualquier nuevo plugin, mecánica, sistema (ej. Vivienda/Inmobiliaria, Clanes, Pets/Monturas, Mazmorras), entidad o ítem en el servidor, **es obligatorio actualizar automáticamente `AscendentAdmin`** para que el Panel de Staff integre la gestión y pruebas de esa nueva característica.
   - Todos los demás plugins modulares (`Ascendent*`) se conectan a `AscendentCore`.
 
 ---

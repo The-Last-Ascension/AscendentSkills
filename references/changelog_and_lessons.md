@@ -145,6 +145,15 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
   - Unificados sin colisiones `paper.json`, `feather.json` (`custom_model_data` `2000..2044` de Vol 1 + Vol 2), `atlases/blocks.json` y el pack generado por `ModelEngine`.
   - Copiado automáticamente a la carpeta `resourcepacks/AscendentResourcePack` de la instancia de CurseForge `The Last Ascension` del usuario y subido a `https://github.com/The-Last-Ascension/AscendentResourcePack` (`v1.1.0`).
 
+### [2026-11-09] — Implementación de `AscendentAdmin v1.0.0` (Panel de Staff) y Regla de Auto-Evolución del Panel
+- **Implementación de `AscendentAdmin v1.0.0` (`com.thelastascension.ascendentAdmin`):**
+  - Acceso restringido exclusivamente a `OP` o permisos `ascendent.admin` / `ascendent.staff` mediante `/staff`, `/admin`, `/panel` o `/ascadmin`.
+  - **Pestaña 1 (Jugadores y Ficha de Edición Total):** Selección de cualquier jugador conectado para editar en tiempo real su Nivel Global, Puntos Globales Libres, Monedas, Ranuras de Talismán, Clase Activa (forzando cualquiera de las 12 clases sin bloqueo de nivel), Nivel de Clase, Puntos de Habilidad, maximización de habilidades al Nv. 5, edición individual de las 10 Estadísticas (`StatType`), Curación/Limpieza de Stun, Abatir/Revivir instantáneo, entrega de Kit de Clase y Talismanes, inspección en vivo de Inventario y EnderChest, Teletransporte, cambio de Gamemode, Congelación (*Freeze*) y Expulsión (*Kick*).
+  - **Pestaña 2 (Spawner 3D y Entidades):** Invocación con 1 clic de Muñecos de Combate (*Parryable* / *Imparable*), los **11 modelos 3D de SamusDev** (*Training Dummy, Quest Master, Herreros, Banquero, Hada Curativa, Portales, Mena de Dragonita y Runa de Curación*) y limpiador por radio (`15m` / `50m`).
+  - **Pestaña 3 (Arsenal RPG e Ítems Custom):** Entrega directa de Hojas Ascendentes con Parry de los **8 Elementos**, Corazas Inteligentes de Clase e ítems custom de SamusDev (*Monedas, Lingotes, Llaves, Runas, Pociones, Hierbas y Pergaminos*).
+  - **Pestaña 4 (Control del Servidor y Mundo):** Hora, Clima, Gamemode propio, Modo Invisible (*Staff Vanish*), Velocidad de Vuelo (*x1 a x8*), Spawn del mundo, Whitelist/Mantenimiento y Recarga en caliente (*Hot Reload*) de todos los módulos `Ascendent*`, `MythicMobs` y `ModelEngine`.
+- **Regla Permanente de Auto-Mejora de `AscendentAdmin`:** A partir de ahora, toda nueva función, sistema o plugin que se añada al servidor deberá integrarse automáticamente también dentro de `AscendentAdmin`.
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
