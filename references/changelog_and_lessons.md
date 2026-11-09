@@ -117,6 +117,24 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
   - **`CombatCommand` (`/combat` / `/asccombat`):** Subcomandos `info`, `weapon`, `dummy [parryable|unparryable]`, `coop <elemento> [solo]`, `downed` y `revive`.
   - Publicado en `https://github.com/The-Last-Ascension/AscendentCombat` (`v1.0.0`).
 
+### [2026-11-09] — Implementación de `AscendentClasses v1.0.0` (Clases, Habilidades Evolutivas, Armaduras y Talismanes)
+- **Implementación de `AscendentClasses v1.0.0` (`com.thelastascension.ascendentClasses`):**
+  - Registrado en `AscendentCore` (`ModuleRegistry` y `LangManager` con `es_es.yml` primario + `en_us.yml` secundario).
+  - **Catálogo de 12 Clases (`ClassAndTalismanRegistry`):**
+    - **4 Clases Iniciales (*Pokémon Starters*):** `vanguardia` (*Vanguardia*), `filo_sombra` (*Filo de Sombra*), `arcanista` (*Arcanista Elemental*) y `custodio_sylva` (*Custodio Sylva*).
+    - **8 Ascensiones/Evoluciones (Nivel 10 de clase base):** `paladin_astral`, `coloso_igneo`, `monarca_umbra`, `tempestad_cefiro`, `sabio_abismo`, `soberano_fulmen`, `druida_primordial` y `oraculo_estelar`.
+  - **Separación de Puntos y Tablas SQL (`ascendent_class_progress` y `ascendent_player_gear`):**
+    - Cambiar de clase es gratuito estilo *Trove*: guarda el nivel, puntos de habilidad y mejoras de cada clase por separado, mientras que los **Puntos de Estadística Globales** persisten siempre en el jugador.
+    - Incluye **Respec** (reseteo de estadísticas globales o habilidades de clase con monedas).
+  - **Habilidades Evolutivas por Categoría (`RAPIDA`, `CARGADA`, `MOVIMIENTO`, `ESPECIAL`, `DEFINITIVA`):**
+    - Mejorables del Nivel 1 al 5 (+25% daño, +20% Stun y +0.6 bloques de tamaño AoE por nivel).
+    - Las Definitivas se integran automáticamente con `AscendentCombat` abriendo/detonando ventanas de **Definitiva Conjunta Cooperativa (Tipo 2)**.
+  - **Armaduras Inteligentes y Talismanes estilo *Elden Ring*:**
+    - Armaduras con **Estadísticas Base Universales** (activas en cualquier clase) y **Pasivas/Bonos Exclusivos** que solo se activan si llevas la clase requerida o su evolución.
+    - 6 Talismanes equipables respetando las ranuras desbloqueadas (`unlocked_talisman_slots`, empezando con 1).
+  - **Menú GUI con 4 Pestañas (`ClassMenuGui` — `/clase`):** Pestañas interactivas para Clases/Ascensiones, Estadísticas Globales, Habilidades de Clase y Bolsa de Talismanes.
+  - Publicado en `https://github.com/The-Last-Ascension/AscendentClasses` (`v1.0.0`).
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
