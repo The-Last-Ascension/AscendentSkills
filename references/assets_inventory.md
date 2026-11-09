@@ -5,7 +5,12 @@ Este documento registra todos los motores de servidor, plugins premium desbloque
 > **Regla de Mantenimiento (`AGENTS.md` Regla 5):**
 > - **Deduplicación:** En `assets/` solo debe existir **una única copia** de cada asset (siempre la versión más reciente).
 > - **Contraseña de Archivos:** Si un `.zip` o `.rar` descargado pide contraseña, es **`BLACKSPIGOT.COM`** (y debe re-empaquetarse/extraerse sin contraseña en `assets/`).
-> - **Sincronización con Word/Drive:** Cada vez que se añada, actualice o elimine un asset en `assets/`, se debe regenerar/actualizar **`assets/Catalogo_Assets_The_Last_Ascension.docx`** (usando `scratch/build_openxml_docx.ps1`) con: Nombre, 1 foto representativa, mini-descripción en Español, link de descarga (BlackSpigot) y link oficial (`samusdev.com` / creador).
+> - **Sincronización Automática con Word Local y Google Drive / Google Docs:**
+>   Cada vez que se añada, actualice o elimine un asset en `assets/`, se deben actualizar automáticamente:
+>   1. **Archivo Word Local:** `assets/Catalogo_Assets_The_Last_Ascension.docx`
+>   2. **Carpeta en Google Drive (`The Last Ascension`):** `https://drive.google.com/drive/folders/1qZZg9La-TIcaznwLjCDKGxT3OE5Z9EFt` (`ID: 1qZZg9La-TIcaznwLjCDKGxT3OE5Z9EFt`)
+>   3. **Google Doc Nativo en Drive:** [Catálogo de Assets - The Last Ascension (Ascendant)](https://docs.google.com/document/d/1ZbCKzchua_Q1GcTfTMGXx_1n3L8_U1PUSiaPtknPLVc/edit) (`DOC_ID: 1ZbCKzchua_Q1GcTfTMGXx_1n3L8_U1PUSiaPtknPLVc`, actualizable con `gdocs mutate import-md ... --update 1ZbCKzchua_Q1GcTfTMGXx_1n3L8_U1PUSiaPtknPLVc`)
+>   4. **Copia `.docx` en Drive:** `ID: 1xGXwePHZ5-m9fgsf856sXdRUbtxIJkVP` (actualizable con `gdrive mutate update 1xGXwePHZ5-m9fgsf856sXdRUbtxIJkVP assets/Catalogo_Assets_The_Last_Ascension.docx`)
 
 ---
 
