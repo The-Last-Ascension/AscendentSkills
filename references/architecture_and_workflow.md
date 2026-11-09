@@ -29,6 +29,7 @@ The Last Ascension/
 ```
 
 - **Entorno Local -> Linux:** El servidor dentro de `server/` se ejecutará inicialmente en local en Windows mediante un archivo `start.bat` para pruebas rápidas, y más adelante se migrará a un servidor Linux en producción.
+- **Regla de Ejecución en Ventana de Consola Visible (`start.bat`):** Cada vez que el agente inicie el servidor en local, **debe abrir una ventana real y visible de `cmd.exe` / `powershell` ejecutando `server\start.bat`** (`Start-Process cmd.exe -ArgumentList "/c start.bat" -WorkingDirectory "c:\Users\Sebilebi\source\repos\The Last Ascension\server"`) para que el usuario tenga la consola del servidor en pantalla y pueda ver los logs o escribir comandos directamente como si hubiera abierto `start.bat` él mismo.
 - **Organización de GitHub (`https://github.com/The-Last-Ascension`):**
   - Conectada y verificada en local con la cuenta administradora **`Sebilebi`** (vía *Git Credential Manager* + GitHub REST API, con permisos `repo` y `admin` sobre la organización `ID: 354255522`).
   - **Qué SÍ se sube a GitHub (1 repositorio independiente por cada uno):**
