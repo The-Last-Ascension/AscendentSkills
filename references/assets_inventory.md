@@ -58,7 +58,11 @@ Este documento registra los binarios de servidor, plugins base y paquetes de **S
 
 ---
 
-## 3. Estado de Traducción al Español (Regla 3)
+## 3. Estado de Integración y Traducción al Español (Regla 3)
 
-- **Estado Actual:** **100% EN INGLÉS** en los 4 paquetes originales (`[Merchant]`, `Copper Bar`, `Dragonite Bar`, `Deathbloom`, `Magical Herb`, `Training Dummy`, menús y skills).
-- **Acción Requerida:** Avisado al usuario para confirmar la traducción íntegra al Español (manteniendo soporte secundario en Inglés) al integrarlos en el servidor.
+- **Integración Técnica (Completada en Punto 4):**
+  - **ModelEngine (`server/plugins/ModelEngine/`):** Extraídos los **73 modelos `.bbmodel`** completos en `blueprints_library/` y activados los **12 modelos principales de showcase** en `blueprints/` (límite de la versión gratuita de `ModelEngine 4.1.1`: `dummy`, `npc_quest_master`, `npc_merchant_weapon`, `npc_merchant_armor`, `npc_merchant_potion`, `npc_banker`, `npc_healing_fairy`, `obj_portal_dungeon`, `obj_waypoint_gate`, `runestone_heal`, `ore_dragonite`, `chest_golden`).
+  - **MythicMobs (`server/plugins/MythicMobs/packs/AscendentSamus/`):** Integrados los **16 archivos YAML** (`89` Mobs/NPCs/Nodos, `53` Ítems y `456` Skills), adaptados para funcionar sin errores de placeholders de pago en `MythicMobs Free 5.14.0`.
+  - **Resource Pack Unificado (`resource packs/AscendentResourcePack` `v1.1.0`):** Fusionados los modelos/texturas de `RPG_ESSENTIALS_CORE`, `VOL1`, `VOL2` (`paper.json`, `feather.json` con 45 `custom_model_data` `2000..2044` y `atlases/blocks.json`) junto con el resource pack compilado de `ModelEngine`, y sincronizado automáticamente en el perfil de CurseForge (`The Last Ascension/resourcepacks/AscendentResourcePack`).
+- **Estado de Idioma Actual:** **100% EN INGLÉS** en los 16 archivos YAML de `AscendentSamus` (`[Merchant]`, `[Banker]`, `Copper Bar`, `Dragonite Bar`, `Deathbloom`, `Magical Herb`, `Training Dummy`, menús y diálogos).
+- **Acción Requerida (Regla 3):** Avisado al usuario tras completar el Punto 4 para confirmar si desea traducir ahora mismo todos los NPCs, ítems, menús y textos de SamusDev al **Español**.

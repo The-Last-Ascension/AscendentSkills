@@ -135,6 +135,16 @@ Este archivo registra cronológicamente las decisiones de arquitectura, sistemas
   - **Menú GUI con 4 Pestañas (`ClassMenuGui` — `/clase`):** Pestañas interactivas para Clases/Ascensiones, Estadísticas Globales, Habilidades de Clase y Bolsa de Talismanes.
   - Publicado en `https://github.com/The-Last-Ascension/AscendentClasses` (`v1.0.0`).
 
+### [2026-11-09] — Punto 4: Integración de los 4 Packs de SamusDev y `AscendentResourcePack v1.1.0`
+- **ModelEngine (`server/plugins/ModelEngine/`):**
+  - Extraídos los **73 blueprints `.bbmodel`** de los 4 paquetes de SamusDev en `blueprints_library/`.
+  - Dado que `ModelEngine R4.1.1` (versión gratuita) tiene un límite de 12 modelos activos simultáneos, se han dejado en `blueprints/` los **12 modelos principales de showcase** (`dummy`, `npc_quest_master`, `npc_merchant_weapon`, `npc_merchant_armor`, `npc_merchant_potion`, `npc_banker`, `npc_healing_fairy`, `obj_portal_dungeon`, `obj_waypoint_gate`, `runestone_heal`, `ore_dragonite`, `chest_golden`).
+- **MythicMobs (`server/plugins/MythicMobs/packs/AscendentSamus/`):**
+  - Integrados los **16 archivos YAML** (`Mobs/`, `Items/`, `Skills/`), cargando **89 mobs/entidades**, **53 ítems custom** y **456 skills**, limpiando las advertencias de placeholders exclusivos de la versión Premium.
+- **`AscendentResourcePack v1.1.0` (`resource packs/AscendentResourcePack`):**
+  - Unificados sin colisiones `paper.json`, `feather.json` (`custom_model_data` `2000..2044` de Vol 1 + Vol 2), `atlases/blocks.json` y el pack generado por `ModelEngine`.
+  - Copiado automáticamente a la carpeta `resourcepacks/AscendentResourcePack` de la instancia de CurseForge `The Last Ascension` del usuario y subido a `https://github.com/The-Last-Ascension/AscendentResourcePack` (`v1.1.0`).
+
 ---
 
 ## Lecciones Técnicas y Resolución de Bugs
